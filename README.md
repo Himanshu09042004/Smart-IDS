@@ -3,36 +3,44 @@
 
 
 
-Explanation of the Code
+# Explanation of the Code
 This script is designed to create an intelligent intrusion detection system (IDS) using a Random Forest classifier. The script performs the following steps:
 
-Logging Setup:
+# Logging Setup:
 
 Initializes logging to record important events and alerts.
-Data Loading:
+
+# Data Loading:
 
 Loads the training and testing datasets from CSV files.
-Data Preprocessing:
+
+# Data Preprocessing:
 
 Encodes categorical features (e.g., protocol_type, service, flag) using LabelEncoder.
 Splits the datasets into features (X_train, X_test) and labels (y_train, y_test).
 Normalizes numerical features (duration, src_bytes, dst_bytes) using StandardScaler.
-Feature Selection:
+
+# Feature Selection:
 
 Trains a Random Forest model to determine feature importances.
 Selects the top 20 most important features.
-Model Training:
+
+# Model Training:
 
 Trains a new Random Forest model using the selected features.
 Evaluates the model using a confusion matrix and classification report.
-Model Saving:
+
+# Model Saving:
 
 Saves the trained model to disk using joblib.
-Real-Time Monitoring:
+
+# Real-Time Monitoring:
 
 Defines functions to simulate data collection, preprocess new data, and alert administrators.
 Continuously monitors network data, makes predictions, and logs alerts for malicious activity.
-How to Use the Code
+
+# How to Use the Code
+
 Prepare Your Environment:
 
 Ensure you have the required libraries installed:  pip install pandas scikit-learn joblib
@@ -83,7 +91,7 @@ Run the script in your terminal or Python environment:  python smartids.py
 
 Check the log file smartids.log for alerts and other logged information.
 
-Real-World Considerations:
+# Real-World Considerations:
 
 >Data Collection: Replace the simulated data collection in get_new_network_data with actual network traffic data.
 >Feature Engineering: Ensure that the features used in training reflect the actual features present in the real-time data.
